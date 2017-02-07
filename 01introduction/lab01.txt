@@ -1,0 +1,25 @@
+1a. Data are known recordable facts and databases are colections of related data that have been organized. Database systems consists of
+	databases as well as the means to manipulate, view and modify the data within its component databases. Information systems 
+	include the database systems and all of the non-electronic components that go into management such as the people and various
+	physical processes and hierarchies.
+
+1b. Database systems have persistence so the exist outside of the execution of file systems and data structures and also have data 
+	abstraction which allows 
+
+1c. The various stakeholders of databases are the different types of users and manageres of the system. Casual users are users who do infrequent 
+	and varied operations on the database system. Naive users do continual simple "canned" operations on the system. Sophisticated users are 
+	users who are very familiar with the system to complete complex tasks. Standalone users utilize personal databases that are easy to use.
+
+2a. High level models don't rely on describing concepts in a way that properly represents data, instead portraying information in a way more
+	easily understood by people. Conversely, Low level models providees conspets that describe how the information is stored on the physical
+	medium. Representational data models exist between the prior two, hiding the deeper details while still being implementable. Figure 2.1 is
+	a representational data model as it implementable, but hides how the information is stored.
+
+2b. Three-schema architecture is a tool that is used to understand how a database is to be used by dividiing its physical data demands, what can be
+	calculated from the data, and what the users expect from the database. The three levels are the internal level, the conceptual level, and the 
+	external level. The internal level is the physical storage structure and its layout. The conceptual level indicates the relationships that
+	occut between the different entities in the data. The external level is concerned with the various views and what type of information it conveys.
+
+2c. Web applications usually use a three tier architecture which consists of the client, application and database servers. The database server is the origin
+	of all data used by the application and client servers and is centralized. The application server runs application programs and storing rules used to 
+	access data from the database server. The client server is the server from the user's end that sends the queries for data.
