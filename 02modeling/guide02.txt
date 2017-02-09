@@ -1,0 +1,16 @@
+1a. Ted Codd invented the relational data model at IBM in 1970.
+
+1b.
+	i. A relation is a table in the relational database model.
+	ii. Attributes are the names of the column headers in a table.
+	iii. Domain is a set of values that cannotbe broken up,
+	iv. n-tuples are tuples with n elements, where n is an integer
+	v. Null values represent unknown values.
+	vi. Primary keys are the identifying elements of a table that is unique to each entry, foreign keys are primary keys from other tables.
+		super keys are unique sets of attributes that no other tuples possess.
+	vii. A referencing record has a foreign key that is a primary key for the referenced record such that referential integrity is maintained.
+
+1c. No, they can be ordered in any arbitray order and the same holds true for attributes because there is a level of abstraction that makes the 
+	ordering independent.
+
+1d. They can, but it is frowned upon.
