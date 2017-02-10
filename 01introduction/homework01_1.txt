@@ -1,0 +1,5 @@
+1a. Department, prerequisite_number and course_number would all need to be changed
+1b. We would have to change the format of courses to not include the department name and then only the department column would need to be changed
+1c. If we attach each department to a department_id and use the department_id in place of department (for courses that have the department prefixed to the course number, 
+	it would need to be changed to use the department_idinstead) in all but one place where the relation between the two is established, it would then only be needed 
+	to be updated in a single place.
