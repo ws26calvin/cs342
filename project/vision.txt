@@ -1,0 +1,8 @@
+Vision
+
+	The system project I will develop will be a database for the NBA that records the stats for individual players, games as well as for 
+teams for the 2016-2017 season. The information for the stats are readily available from sites such as nba.com. This database will allow searches
+for individual games and players, searches that filter out specific teams and players based on criteria and other comparisons that commonly necessary.
+The various stakeholders should all be able to do some basic searches and filtering and can see basic stats, but basic users would only be able 
+to do this. Another view for more advanced users would allow the user to pick and choose which stats the user wants to see. The admin view would allow
+for direct manipulation forthe data. There will also be a naive user that updates the database as needed with updated information.
