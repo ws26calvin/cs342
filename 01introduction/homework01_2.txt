@@ -1,0 +1,17 @@
+Wasiq Sohail
+CS 342
+
+COLLEGE
+(College_name, College_id)
+
+COURSE
+(Course_number, College_id, Course_name, Credits, Department)
+
+SECTION
+(Section_id, Course_number, College_id, Semester, Year, Instructor)
+
+USER
+(User_id, User_name, College_id,)
+
+SCHEDULE
+(User_id, College_id, Course_number, Section_id)
