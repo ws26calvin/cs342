@@ -1,0 +1,11 @@
+Wasiq Sohail
+2/10/17
+CS 342
+
+a.
+	I would do something like CHECK (vote > 1000 or score IS NULL) which would only add a record if
+it has over 1000 votes or if the score is null.
+
+b. 
+	One example would be for multiple views. One view might want to be able to see all the data, but another
+may only care about a subset of the data, which a togglable constraint would help enable.
