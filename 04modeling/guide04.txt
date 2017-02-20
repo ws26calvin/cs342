@@ -1,0 +1,20 @@
+1a.
+	1. Relations schemas should be simple, easily explainable and avoid combining multiple attributes
+	2. Base relation schemas should not have insertion, deletion or modification anomalies
+	3. Avoid placing attributes in a base relation that will frequently be NULL
+	4. Design relation schemas so that they can easily be joined across primary and foreign keys if they are properly related, and if they
+		are not related, they should not be easily joined.
+
+1b. Functional dependency is where an attribute determines the value of another attribute, which serves as a constraint on the the value being
+	determined. Multi-values dependency is where an attribute determines an attribute that in turn determines a third attribute. In this case,
+	the third attribute is still dependent on the first.
+
+1c. A superkey is a set of attributes with the property that for every entity in an entity type, it is unique; a key is a set of attributes
+	that fulfills the definition of a superkey, but cannot have any attribute removed and remain unique.
+
+1d. BCNF is a stricter form of 3NF and 4NF is a stricter example of 3NF and BCNF. The example in the book uses lot allocation of different counties
+	as an example and for BCNF points out that the different tuples for county and lot size violates BCNF and would be decomposed to be normalized
+
+1e. Normalization in relational schemas is done by ensuring every relation in a schema fulfills certain rewuirements, and if they don't, breaking 
+	down these relations as necessary, denormalization can be useful to improve queries and related functions and functions by storing the 
+	join of higher normal form relations.
