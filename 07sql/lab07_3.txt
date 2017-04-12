@@ -1,0 +1,5 @@
+Wasiq Sohail
+7.3
+
+a. PROJECT_firstname,lastname(PERSON)
+b. {t.firstname, t.lastname | Person(t)}
