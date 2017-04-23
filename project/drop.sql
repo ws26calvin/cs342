@@ -1,0 +1,5 @@
+DROP TABLE Position;
+DROP TABLE GameStats;
+DROP TABLE Game;
+DROP TABLE Player;
+DROP TABLE Team;

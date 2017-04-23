@@ -1,0 +1,18 @@
+	This data was scraped from basketball-reference.com using python. The module
+I used was BeautifulSoup to extract the information from the website. In particular
+I scraped from each player's personal page and from the boxscores for the 2016-17
+season.
+	The normal form that my schema takes is at least 3NF because every attribute that
+is not part of the key is dependant on the key. For the Team table, the ID is a 3
+character abbreviation for the team that represents its name and its location as well
+as what division and conference the team is in. For the Player table, the id identifies
+uniquely for a specific player and all of his characteristics, which in this case is 
+his full name, birthdate, height, experience in the league, college and the team he plays
+on. For the position table, there are two characteristics and its key is a combination of
+the playerid and the position, and position is functionally dependant on the player
+the playerid represents. The Game table has an ID the uniquely identifies a game and all
+of the activities that took place in that time at that date, including the two teams who played, number 
+of overtimes and the points that were scored. The table GameStats has a playerid, teamid, gameid
+primary key (the teamid is important because players can be traded, so it indicates at that
+time which team the player was on) and all of the assorted stats represent the actions of the
+player represented by the playerid for the team in teamid at the game represented by the gameid.
