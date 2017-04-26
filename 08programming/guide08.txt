@@ -1,0 +1,71 @@
+Wasiq Sohail
+CS 342
+
+Sections 10.1, 10.4.1 & 26.1.1–2
+
+1a. Name the three basic approaches to database programming.
+
+i. Embed database commands in a general purpose language.
+ii. Using a library that calls the database functions and classes
+iii. Design a new language 100% compatible with the database.
+
+1b. Explain the concepts of:
+
+i. impedance mismatch: When there are differences in data types between the database and 
+					the programming language.
+
+ii. stored procedures: Database programs that exist in the DBMS layer
+
+iii. triggers: An action that occurs on a database after an event under specific
+				conditions implicitly and automatically.
+
+2a. Compare and contrast:
+
+i. procedural vs non-procedural languages.
+
+A procedural language tells the system to do in order to reach some result, while a 
+non-procedural language just tells the system what it needs, and then the system finds
+some means to reach that result.
+
+ii. client-side vs server-side database programming.
+
+Server-side programming reduces the amount of information that needs to be sent back
+and forth over a network and reduces memory allocation in clients since the programming
+is executed on the server's side.
+
+Client-side programming allows for more dynamic, flexible usage for the users and 
+allows instant feedback, reduces server load
+
+2b. Explain why one would want to do server-side programming using PL/SQL.
+
+PL/SQL is built to work with SQL so there would be fewer problems
+
+2c. For each of the following code segments, identify the type of the database object and explain what it does.
+
+i.
+CREATE PROCEDURE limited_count (limit IN integer) AS
+BEGIN
+  FOR i IN 1..limit LOOP
+      dbms_output.put_line(i);
+  END LOOP;
+END;
+
+This is a procedure that prints out each number between 1 and limit.
+ 
+ii.
+BEGIN
+  dbms_output.put_line('Hello, PL/SQL!');
+END;
+ 
+This is an anonymous block that prints Hello, PL/SQL!
+ 
+iii.
+CREATE TRIGGER log_trigger
+  BEFORE INSERT OR UPDATE OF lastName ON Person
+  FOR each row
+BEGIN
+  dbms_output.put_line('Hello, name change!');
+END;
+
+This is a trigger that prints 'Hello, name change!' every time lastname is
+inserted or updated.
