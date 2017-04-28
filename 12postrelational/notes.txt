@@ -1,0 +1,20 @@
+12.1.
+
+1. We need a database connection like Glassfish in order to build a remote server as Intellij cannot do that by itself.
+
+12.2
+
+1. Each table becomes a class with all the appropriate functions to retrieve information from the class+
+2. The PK class holds the composite primary key for the nonPK class it is related to
+3. Defaults to property annotations
+
+12.3
+
+1. Marshalling is used to communicate the information from the Person class object to the MyApplication class.
+2. The MyApplication class is dependant on the Person class for the information and merely accepts the information
+    via injection.
+3. The entitiy manager oversees the persistent data objects, which includes the information in Person
+
+12.4
+
+1. The JPA handles the persistent data objects and communicates them to be injected into MyApplication
