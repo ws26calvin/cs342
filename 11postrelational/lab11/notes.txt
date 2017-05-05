@@ -1,0 +1,9 @@
+11.1
+c. They are pretty similar layoutwise
+d. It runs at the EIS Tier
+e. It is hosted on a locat host
+f. WAR is a type of JAR file that archives resources that consist of a web application
+g. Exploded archives are essentially deployable
+
+11.2
+b. It uses the RESTful Web Service library
