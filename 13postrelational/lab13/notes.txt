@@ -1,0 +1,15 @@
+13.1
+
+a. store.put places a key-value pair in KVlite while em.persist allows
+
+b. store.put does not place a key-value pair into any specific structure, unlike myHashTable.put, instead leaving the structure to the application to decide.
+
+13.2
+
+a. KVlite keys create a new record for every key, value pair while in a relational database each value can be put in the same record as the key.
+
+13.3
+
+a. A KV database could just create a pair for every key and foreign key pair to "connect" the relations.
+
+b. If a NULL value needed to be created as the key to be filled in later or to serve as the default
