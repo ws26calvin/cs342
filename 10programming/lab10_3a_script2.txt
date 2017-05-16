@@ -1,0 +1,19 @@
+SQL> SELECT rank FROM Movie WHERE id = 92616;
+
+      RANK                                                                      
+----------                                                                      
+       8.7                                                                      
+
+SQL> UPDATE Movie SET rank = (rank - 0.3) WHERE id = 92616;
+
+--At this point the session hanged until the commit from script1 went through
+
+1 row updated.
+
+SQL> SELECT rank FROM Movie WHERE id = 92616;
+
+      RANK                                                                      
+----------                                                                      
+       8.5     
+
+SQL> SPOOL OFF;

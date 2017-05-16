@@ -1,0 +1,25 @@
+SQL> SELECT rank FROM Movie WHERE id = 92616;
+
+      RANK                                                                      
+----------                                                                      
+       8.7                                                                      
+
+SQL> LOCK TABLE Movie IN EXCLUSIVE MODE;
+
+Table(s) Locked.
+
+SQL> UPDATE Movie SET rank = (rank + 0.1) WHERE id = 92616;
+
+1 row updated.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT rank FROM Movie WHERE id = 92616;
+
+      RANK                                                                      
+----------                                                                      
+       8.5     
+
+SQL> SPOOL OFF;
