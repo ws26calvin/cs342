@@ -13,7 +13,7 @@ BEGIN
 	END IF;
 EXCEPTION
 	WHEN too_many_teams THEN
-		ROLLBACK;
+		dbms_output.put_line('Too many teams for a single game');
 END;
 /
 
