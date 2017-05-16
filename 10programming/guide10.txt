@@ -1,0 +1,65 @@
+1. Sections 20.1-20.4.1 & 20.6 — Explain the following.
+a. interleaving vs. parallelism
+
+Interleaving is running one program at a time, but pausing a program to run another. While parallelism is actually
+running two programs simultaneously.
+
+b. the lost update, dirty read and incorrect summary problems
+
+Lost update: When 2 different transactions have read the same data, and one updates the data, but the second is still
+using the old information and completes the transaction using the onld information, ignoring the first transaction.
+
+Dirty read: When a transaction modifies a value incorrectly, which is read by a second transaction, but the first transaction rollbacks
+the value, so now the second transaction is operating on incorrect data.
+
+Incorrect summary: When a transaction is calculating an aggregate, but a second transaction is updating/inserting on the
+same relation, which can cause the first transaction to calculate an aggregate for an incomplete amount of data that
+represents neither the original state, or the state after the second transaction.
+
+c. transactions, including commits and rollbacks
+
+A transaction is an atomic process that updates a database in some way. Transactions are only committed if they are
+complete and are unaffected by or do not affect other transactions. Otherwise the transaction is rollbacked to its
+pre-transaction state.
+
+d. the ACID properties
+
+Atomicity: The transaction is performed in either its entirety or not performed at all.
+
+Consistency Preservation: A transaction should move a database from one consistent stable state to another consistent
+state
+
+Isolation: A transaction's execution should not be affected by other transactions.
+
+Durability: A transaction's effects persist past its execution.
+
+e. schedule
+
+An ordering of transactions, taking advantage of interleaving and ensuring that each transaction retains its 
+ACID properties.
+
+2. Chapter 21 introduction and Section 21.1 — Explain the following.
+
+a. lock
+
+When a transaction claims use of a table that precludes another transaction utilizing the same table. 
+
+b. two-phase locking
+
+A system of locks where there is a growing phase that locks tables and a shrinking phase that unlocks tables.
+
+3. Review Oracle’s Overview of Transaction Processing in PL/SQL (only; you can skip the other sections on this page) — Compare and contrast the following.
+
+a. SAVEPOINT, COMMIT vs ROLLBACK [TO]
+
+SAVEPOINT: marks a point in a transaction which can be rollbacked to.
+
+COMMIT: ends a transaction and makes all changes in the transaction permanent.
+
+ROLLBACK: Ends the transaction and undoes all the changes.
+
+b. LOCK TABLE vs. FOR UPDATE
+
+LOCK TABLE: Tables are closed off from other transactions.
+
+FOR UPDATE: Lock specific rows of a table from other transactions.
