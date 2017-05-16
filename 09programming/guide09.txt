@@ -1,0 +1,97 @@
+Chapter 17
+
+a. B+ Trees — Focus on the Section 17.3 (skipping the material on algorithms).
+
+i.Compare and contrast B-trees and B+-trees.
+
+B+ trees are the same as B trees with the same rules for the internal nodes,
+except there are no data pointers in the internal nodes. All of the data pointers
+are in the leaf nodes, and this allows B+ trees to be more compact.
+
+ii. Explain what it means for such a tree to be balanced.
+
+A tree is balanced if all of its leaf nodes are on the same level.
+
+iii. Compare and contrast tree and data pointers.
+
+Tree pointers point to a node that is on a level beneath the current node while
+data pointers point to a location or block for a record or value is located.
+
+b. Explain the nature of multiple-attribute indexes (see the introduction to Section 17.4).
+
+Multiple-attribute indexes are composed of more than one attribute (attributes that
+are usually queried or referenced together) when the index consists of values from
+different tables, it is a composite index, one that usually is made to make joins more
+efficient.
+
+c. Explain the nature of hash and bitmap indexes (see Sections 17.5.1–2).
+
+A hash index is a secondary access structure that stores data based on a search key aside from the primary key,
+and are primarily used to organize for quick O(1) equality comparisons.
+
+Bitmap indexes are usable when records are numbered and are allocated to memory serially according to this number.
+A particular value of a particular field is given a bitmap index that is how it is displayed in physical memory.
+This is an efficient way of storing items in memory. 
+
+d.Physical Database Design — Focus on the Section 17.7.
+
+i. Explain the concept of physical database design (PDD).
+
+PDD is about structuring the data in storage in an efficient way that also guarantees good performance.
+
+
+ii. Compare and contrast the uses for B-tree, hash and bitmap indexes in PDD.
+
+B-trees are more or less the default structure for a reason; they are flexible and can be allocated space relatively 
+easily due to their reliance on pointers.
+
+Hashing requires 2 search keys, one unique key and another that used to hash to records into different buckets
+which in PDD does not take up too much space, but does require some overhead.
+
+Bitmap indexes can reduce the amount of storage use significantly, but the fields that are given bitmap indexes 
+need to be selected carefully since if there are too many or too few unique values for a field, it will not actually
+help. Additionally, records have be able to physically stored serially to make use of this.
+
+iii. Explain whether denormalization should be considered a form of PDD.
+
+No, because denormalization occurs at the schema level for schema related reasons and PDD is about how data is
+physically stored.
+
+
+Chapter 18
+
+a. Explain the concept of query optimization (see the introduction to the chapter).
+
+Query optimization is about running a query while calling on the fewest records and tables that it can and handling
+conditions and joins in a structured and expedient manner.
+
+3. Oracle’s EXPLAIN PLAN
+
+a. Load the small version of the Internet Movie DB defined in the repo (cs342/databases/imdb), configure the auto-trace facility in SQL*Plus (SET SERVEROUTPUT ON; & SET AUTOTRACE ON;) and generate an execuation plan for some simple query. What is the execution plan operation used and what does that operation do?
+
+SELECT * FROM Movie;
+
+The execution plan operation was a TABLE ACCESS FULL, which accessed every single record in Movie, which was appropriate
+because the query asked for every single record.
+
+b. Explain at least the following operations (see Oracle Execution Plan Operations).
+
+TABLE ACCESS FULL
+
+Reads the entire table (every single row and every field in the row). This is an expensive operation.
+
+TABLE ACCESS BY INDEX
+
+Retrieves a record from that is looked up by the index
+
+NESTED LOOPS
+
+Fetches a record from a table and queries the joining table fora  matching record from that table.
+
+HASH JOIN
+
+Candidate records from table are loaded into a hash which is probed for a row from the other table for the join.
+
+INDEX UNIQUE SCAN
+
+A b tree traversal that occurs when there is a constraint that guarantees a unique answer
