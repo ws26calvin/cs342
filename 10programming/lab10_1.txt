@@ -1,0 +1,24 @@
+i. The same result in both sessions.
+
+ii. The first session with the delete did not return the movie, the second session did return the movie
+
+iii. Both the first and second sessions return the same results.
+
+iv. The first session sees the inserted movie, the second session deos not.
+
+v. Both sessions can find the new movie.
+
+1a. Yes, if the session is exited normally, any changes to the database are committed, it there is some error and/or
+the session crashes, none of the changes are kept to the database, so they are aborted.
+
+1b. 
+
+Atomicity is possible because if there is any issue at any point of the transaction a rollback can be issued to
+return the database to its original state.
+
+Consistency is possible because we cannot do anything that would violate the schema in the session is rejected.
+
+Isolation is possible in multiple sessions because a session will not commit to a table that is already being altered 
+by another session.
+
+Durability is possible as commit sends all changes to the database which retains its information.

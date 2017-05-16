@@ -1,0 +1,26 @@
+SQL> SET AUTOCOMMIT ON;
+SQL> SELECT * FROM Movie WHERE id = 92616;
+
+        ID                                                                      
+----------                                                                      
+NAME                                                                            
+--------------------------------------------------------------------------------
+      YEAR       RANK   SEQUELID                                                
+---------- ---------- ----------                                                
+     92616                                                                      
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb            
+      1964        8.7                                                           
+                                                                                
+
+SQL> UPDATE Movie SET rank = (rank + 0.3) WHERE id = 92616;
+
+1 row updated.
+
+Commit complete.
+SQL> SELECT rank FROM Movie WHERE id = 92616;
+
+      RANK                                                                      
+----------                                                                      
+         9                                                                      
+
+SQL> SPOOL OFF;
