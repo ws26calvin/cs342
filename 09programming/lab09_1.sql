@@ -4,7 +4,6 @@ SET TIMING ON;
 SET AUTOTRACE TRACEONLY;
 
 --a.
-/*
 DECLARE
 	num INTEGER;
 BEGIN
@@ -124,7 +123,6 @@ END;
 /
 
 --Elapsed: 00:00:12.40
-*/
 
 
 DECLARE
