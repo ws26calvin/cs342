@@ -10,6 +10,8 @@ import java.util.List;
 @Entity
 public class Person {
     @Id
+    @GeneratedValue(generator = "cpdbSequence")
+    @SequenceGenerator(name = "cpdbSequence", sequenceName = "cpdb_sequence", allocationSize = 1)
     private long id;
     private String title;
     private String firstname;
