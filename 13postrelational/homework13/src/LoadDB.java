@@ -44,10 +44,6 @@ public class LoadDB {
                 vrank = Value.createValue(movieResults.getString(4).getBytes());
             }
             store.put(krank,vrank);
-
-            result = new String(store.get(krank).getValue().getValue());
-            System.out.println(krank.toString() + " : " + result);
-
         }
 
         ResultSet actorResults = jdbcStatement.executeQuery("SELECT id, firstname, lastname FROM Actor");
@@ -68,7 +64,6 @@ public class LoadDB {
             //Need to distinguish same actor with different roles in same movie and this is the easiest way to do it. It's minor rather than major
             //so the role name is not necessary for searching
             Key krole = Key.createKey(Arrays.asList("role", roleResults.getString(1),roleResults.getString(2)), Arrays.asList(roleResults.getString(3)));
-            //Key krole2 = Key.createKey(Arrays.asList("role", roleResults.getString(1),roleResults.getString(2)), Arrays.asList("role"));
 
             Value vrole = Value.createValue(roleResults.getString(3).getBytes());
             store.put(krole,vrole);
