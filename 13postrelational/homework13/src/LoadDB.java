@@ -1,7 +1,3 @@
-/**
- * Created by ws26 on 5/17/2017.
- */
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -27,9 +23,17 @@ public class LoadDB {
             Value vname = Value.createValue(movieResults.getString(2).getBytes());
             store.put(kname,vname);
 
+            String result = new String(store.get(kname).getValue().getValue());
+            System.out.println(kname.toString() + " : " + result);
+
+
             Key kyear = Key.createKey(Arrays.asList("movie", movieResults.getString(1)), Arrays.asList("year"));
             Value vyear = Value.createValue(movieResults.getString(3).getBytes());
             store.put(kyear, vyear);
+
+            result = new String(store.get(kyear).getValue().getValue());
+            System.out.println(kyear.toString() + " : " + result);
+
 
             Key krank = Key.createKey(Arrays.asList("movie", movieResults.getString(1)), Arrays.asList("rank"));
             Value vrank;
@@ -40,6 +44,10 @@ public class LoadDB {
                 vrank = Value.createValue(movieResults.getString(4).getBytes());
             }
             store.put(krank,vrank);
+
+            result = new String(store.get(krank).getValue().getValue());
+            System.out.println(krank.toString() + " : " + result);
+
         }
 
         ResultSet actorResults = jdbcStatement.executeQuery("SELECT id, firstname, lastname FROM Actor");
@@ -51,14 +59,20 @@ public class LoadDB {
             Key klname = Key.createKey(Arrays.asList("actor", actorResults.getString(1)), Arrays.asList("lastname"));
             Value vlname = Value.createValue(actorResults.getString(3).getBytes());
             store.put(klname, vlname);
+            String result = new String(store.get(klname).getValue().getValue());
+            System.out.println(klname.toString() + " : " + result);
         }
 
         ResultSet roleResults = jdbcStatement.executeQuery("SELECT movieid, actorid, role FROM Role");
-        //Since all three of the values are needed to form a key, all three are part of the key, but the role remains the value
         while (roleResults.next()){
+            //Need to distinguish same actor with different roles in same movie and this is the easiest way to do it. It's minor rather than major
+            //so the role name is not necessary for searching
             Key krole = Key.createKey(Arrays.asList("role", roleResults.getString(1),roleResults.getString(2)), Arrays.asList(roleResults.getString(3)));
+            //Key krole2 = Key.createKey(Arrays.asList("role", roleResults.getString(1),roleResults.getString(2)), Arrays.asList("role"));
+
             Value vrole = Value.createValue(roleResults.getString(3).getBytes());
             store.put(krole,vrole);
+
         }
 
         movieResults.close();
