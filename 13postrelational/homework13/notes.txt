@@ -1,0 +1,5 @@
+2a. KVLite is a key-value type of database system which records everything as values tied to some key.
+2b. I would do it as a document database because it is easier to transition to and would work well with websites
+2c. Yes, I would need to reverse the way that I built the key in LoadDB, and then search similar to in part d.
+2d. There is no structure that needs to be built for relations, in kvlite we just tie together keys and values. For example, in LoadDB we built a relationship
+between actorid, movieid and role without having to build that relation in a schema
