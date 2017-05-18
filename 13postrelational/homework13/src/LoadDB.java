@@ -23,17 +23,9 @@ public class LoadDB {
             Value vname = Value.createValue(movieResults.getString(2).getBytes());
             store.put(kname,vname);
 
-            String result = new String(store.get(kname).getValue().getValue());
-            System.out.println(kname.toString() + " : " + result);
-
-
             Key kyear = Key.createKey(Arrays.asList("movie", movieResults.getString(1)), Arrays.asList("year"));
             Value vyear = Value.createValue(movieResults.getString(3).getBytes());
             store.put(kyear, vyear);
-
-            result = new String(store.get(kyear).getValue().getValue());
-            System.out.println(kyear.toString() + " : " + result);
-
 
             Key krank = Key.createKey(Arrays.asList("movie", movieResults.getString(1)), Arrays.asList("rank"));
             Value vrank;
@@ -55,8 +47,6 @@ public class LoadDB {
             Key klname = Key.createKey(Arrays.asList("actor", actorResults.getString(1)), Arrays.asList("lastname"));
             Value vlname = Value.createValue(actorResults.getString(3).getBytes());
             store.put(klname, vlname);
-            String result = new String(store.get(klname).getValue().getValue());
-            System.out.println(klname.toString() + " : " + result);
         }
 
         ResultSet roleResults = jdbcStatement.executeQuery("SELECT movieid, actorid, role FROM Role");
