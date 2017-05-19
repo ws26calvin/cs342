@@ -1,0 +1,8 @@
+The data points that I chose were relevant to the needs of basketball analysis and since most of the relationships (barring gamestat) were 
+one-to-one I could just use a single key. For gamestat I had gameid and playerid as the key because that would be where most of the interest
+in getting the data comes from, but I also included a gameid and teamid pair that had playerid as the minor key so that users could be able
+to find players for a team if they only had the gameid and the teams that played.
+
+KVlite is a poor choice for a basketball database because of the Kvlite does not handle aggregate functions very gracefully which is utterly 
+necesssary for a sports database.
+
